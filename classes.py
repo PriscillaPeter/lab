@@ -32,9 +32,7 @@ class Television:
     def channel_up(self) -> None:
         self.channel += 1
         """
-        - This method should be used to adjust the TV channel by incrementing its value.
-        - It should only work for a TV that is on.
-        - If the method is called when one is on the MAX_CHANNEL, it should take the TV channel back to the MIN_CHANNEL.
+        - This method changes the TV channel. Should only work when tv is on
         """
 
     def channel_down(self) -> None:
@@ -56,10 +54,11 @@ class Television:
             else:
                 self.volume += 1
         """
-        - This method should be used to adjust the TV volume by incrementing its value.
-        - It should only work for a TV that is on.
-        - If the method is called when one is on the MAX_VOLUME, the volume should not be adjusted.
+ 
+        - This method brings up tv volume. Should only work when tv is on. If it's 
+        on MAX_VOLUME, the volume should not be adjusted
         """
+
 
     def volume_down(self) -> None:
         while self.power == True:
@@ -68,9 +67,8 @@ class Television:
             else:
                 self.volume -= 1
         """
-        - This method should be used to adjust the TV volume by decrementing its value.
-        - It should only work for a TV that is on.
-        - If the method is called when one is on the MIN_VOLUME, the volume should not be adjusted.
+        - This method brings down tv volume. Should only work when tv is on. If it's 
+        on the MIN_VOLUME, the volume should not be adjusted.
         """
 
     def __str__(self) -> str:
