@@ -2,21 +2,19 @@ import pytest
 from account import *
 
 def test_init():
-    assert Account.get_name() == "Family Trust" 
-    assert Account.get_balance() == 10  
-    assert Account.get_balance() == -10 
-    assert Account.get_balance() == -10.5  
-    
+    account_1 = Account('Family Trust')
+    assert account_1.get_name() == 'Family Trust' 
+    assert account_1.get_balance() == 10  
+
 def test_deposit(): 
-    Account.getbalance(10)
-    assert Account.get_balance() == 10  
-    assert Account.get_balance() == -10 
-    assert Account.get_balance() == -10.5  
+    account_1 = Account('Family Trust')
+    assert account_1.deposit(-10) is False
+    assert account_1.deposit(10)  
+    assert account_1.get_balance() == 10  
       
-  
 def test_withdraw():
-    assert Account.get_name() == "Family Trust"
-    Account.deposit(10)
-    Account.withdraw(5)
-    assert Account.getbalance() == 5 
-    
+    account_1 = Account('Family Trust')
+    assert account_1.get_name() == "Family Trust"
+    account_1.deposit(10)
+    account_1.withdraw(5)
+    assert account_1.getbalance() == 5 
